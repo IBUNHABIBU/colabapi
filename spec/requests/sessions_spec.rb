@@ -8,6 +8,7 @@ RSpec.describe "Sessions", type: :request do
       it "login the user" do
         post :create, params: { session: { email: user.email, password: user.password } }
         expect(response).to have_http_status(:created)
+        expect(session[:user_id]).to eq(user.id)
       end
     end
     
