@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  namespace :api do
+    namespace :v1 do   
+      resources :projects
+      resources :bookings
+    end
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end
