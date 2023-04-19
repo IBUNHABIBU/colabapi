@@ -3,8 +3,10 @@ class Project < ApplicationRecord
   validates :title, :github, :demo, :languages, presence: true
 
   def imageUrl
-    if screenshot.present? && screenshot.attached?
+    if screenshot.attached?
       Rails.application.routes.url_helpers.url_for(screenshot)
+      # Rails.application.routes.url_helpers.rails_blob_path(screenshot)
+
     end
   end
 end
