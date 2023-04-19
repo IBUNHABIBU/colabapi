@@ -15,20 +15,14 @@ module Api
           end
         end
   
-        def show
-          @project = Project.find(params[:id])
-          render json: ProjectRepresenter.new(@project).as_json
-        end
+        
   
-        def destroy
-          Project.find(params[:id]).destroy!
-          head :no_content
-        end
+        
   
         private
   
         def project_params
-          params.require(:skill).permit(:title, :github, :demo, :languages, :screenshot)
+          params.require(:skill).permit(:name)
         end
       end
     end
