@@ -1,11 +1,21 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.2"
+lock "~> 3.17.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "colabapi"
+set :repo_url, "https://github.com/IBUNHABIBU/colabapi.git"
 
+# Deploy to the user's home directory
+set :deploy_to, "/home/deployer/#{fetch :application}"
+set :rbenv_path, '/home/deployer/.rbenv'
+set :rbenv_ruby, '3.0.1'
+
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+
+# Only keep the last 5 releases to save disk space
+set :keep_releases, 5
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, ENV['BRANCH'] || 'dev'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
@@ -31,6 +41,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
+
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
