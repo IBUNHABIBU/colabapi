@@ -7,7 +7,7 @@ module Api
         end
   
         def create
-          @skill = skill.new(skill_params)
+          @skill = Skill.new(skill_params)
           if @skill.save
             render json: { result: @skill, status: :created }
           else
