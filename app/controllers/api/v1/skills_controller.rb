@@ -7,21 +7,17 @@ module Api
         end
   
         def create
-          @project = Project.new(project_params)
-          if @project.save
-            render json: { result: @project, status: :created }
+          @skill = skill.new(skill_params)
+          if @skill.save
+            render json: { result: @skill, status: :created }
           else
-            render json: { errors: @project.errors.full_messages }
+            render json: { errors: @skill.errors.full_messages }
           end
         end
-  
-        
-  
-        
-  
+
         private
   
-        def project_params
+        def skill_params
           params.require(:skill).permit(:name)
         end
       end
