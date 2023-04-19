@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   has_one_attached :screenshot
-  validates :title, :github, :demo, :languages, presence: true
+  validates :title, :github, :demo, :languages, :screenshot, presence: true
 
   def imageUrl
     if screenshot.attached?
