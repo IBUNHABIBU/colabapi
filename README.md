@@ -10,7 +10,7 @@
     <p align="center"> <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/rails/rails.png" alt="JavaScript" width="100" height="100"> </p>
   </a>
 
-  <h2 align="center"> RUBY ON RAILS API TEMPLATE </h2>
+  <h2 align="center"> API </h2>
   <h3 align="center">This is the template to replicate all api projects.</h3>
 
 ## Built with 
@@ -60,13 +60,3 @@ This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 [issues-url]: https://github.com/IBUNHABIBU/tic-tac-toe-game/issues
 
 
-
-Project 
-
- 1. Title
- 2. Github link
-  3. Live demo link
-  4. Languages used
-  5. Screen shot
-
-  
